@@ -1,0 +1,5 @@
+pygame==2.0.0
+wxPython==4.1.1
+numpy==1.19.5
+mutagen==1.45.1
+easing-functions==1.0.4
