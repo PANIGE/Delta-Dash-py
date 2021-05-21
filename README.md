@@ -4,7 +4,7 @@ Weird python mix between osu!taiko and Muse dash, with an osu!like mapping writi
 This project is a School project, so i don't care about code perfectibility
 
 ###Sources
-most of the sounds com from [osu!Lazer ressources](https://github.com/ppy/osu-resources)
+most of the sounds com from [osu!Lazer resources](https://github.com/ppy/osu-resources)
 Sprites and some of sounds are found on random [osu! skins](https://osuskins.net/)
 Font is Torus, ripped from [osu! web](https://github.com/ppy/osu-web) 
 
@@ -36,7 +36,7 @@ There are a bunch of input available trough the game, that i'll list now
 
 **_Play_**
 
-For the play menu, the input keys are chosen to fit small and large keyboard, since in most rythm game, the most espaced keys are the most confortable, for small keyboard, you want to use `F` and `K` but for large keyboards (with numpad) you'll mostly want to use `D` and `Num4` but both configs are always active
+For the play menu, the input keys are chosen to fit small and large keyboard, since in most rythm games, the most spaced keys are the most confortable, for small keyboard, you want to use `F` and `K` but for large keyboards (with numpad) you'll mostly want to use `D` and `Num4` but both configs are always active
 * `D` or `F` : Blue Key
 * `J` or `Num4` : Red key
 
@@ -47,7 +47,7 @@ For the play menu, the input keys are chosen to fit small and large keyboard, si
 
 ## How To Play
 
-The game contains basic mecanics in most of rythm games, Blue keys are for the upper portion of the screen, red ones are for the lower portion of the screen, your objective is to hit the circles that are coming at the right center of the screen, when it allign whith your overlay, you'll get +1 combo each note touched, but each note missed will reset your combo
+The game contains basic mechanics in most of rythm games, Blue keys are for the upper portion of the screen, red ones are for the lower portion of the screen, your objective is to hit the circles that are coming at the right center of the screen, when it allign whith your overlay, you'll get +1 combo each note touched, but each note missed will reset your combo.
 
 You win score by hitting perfectly the notes on screen and gaining some combo, more accurate you are with your hits, more points you win, you can know how you hit the note whith looking witch color is turning the combo indicator
 
@@ -56,7 +56,7 @@ You win score by hitting perfectly the notes on screen and gaining some combo, m
 * Yellow / orange : Inaccurrate (Meh) Hits
 * Red : Miss
 
-and more accurate you are, more points you win by hit !
+and more accurate you are, more points you win!
 
 * Perfect : 300
 * Good : 100
@@ -70,7 +70,7 @@ Score += Hit * combo
 
 ## Ranking
 ### Hits
-At the right end of your map, you'll end on a screen, the Ranking screen, you'll get a bunch of infos with your play, like your average accuracyn you'll also get the number of each hit you made
+At the right end of your map, you'll end on a screen, the Ranking screen, you'll get a bunch of info about your play, like your average accuracy. you'll also get the number of each hit you made
 * Perfect : 100%
 * Good : 66%
 * Meh : 30%
@@ -96,7 +96,7 @@ Earliest hit / Average hit delay / Latest hit
 ```
 
 ## Maps statistics
-* Note Speed : Speed of elements, higher this stat get, faster the element will be on screen, can be confortable selecting map speed and difficulty
+* Note Speed : Speed of elements, higher this stat gets, faster the element will be on screen, can be confortable selecting map speed and difficulty
 * Health Drain : how sensitive the life bar is, and how much a miss will cost to the life bar, higher this stat get, Each mistake will cost you more life
 * Accuracy Needed : How much accuracy you'll need to have to hit the Perfect/good/Meh, higher this is, harder it gets to hit the 300
 * Difficulty rating : A note given from the creator to get the global difficulty of a map, higher this is, harder the map is (Note this is unlinked from Normal / hard / insane diff) and is universal, since a 2 Rating is harder than a 1.5 Rating, no matter in which difficulty is it placed on
