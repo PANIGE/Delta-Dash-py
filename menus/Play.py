@@ -60,6 +60,7 @@ class Gameplay:
         #used for sprite Caching
         self.UpperSprite = None
         self.LowerSprite = None
+        self.paused = False
 
     def init(self):
         glob.AudioManager.Restart()
@@ -254,7 +255,14 @@ class Gameplay:
         self.Loading.FadeTo(0,200)
         glob.Scheduler.AddDelayed(200, glob.foregroundSprites.remove, sprite=self.Loading)
         self.isLoading = False
-        glob.AudioManager.Unpause()
+        if self.upperSprites[0].time < 3000 or self.lowerSprites[0].time < 3000:
+            glob.Scheduler.AddDelayed(3000, glob.AudioManager.Unpause, notif=False)
+            NotificationMassive("Starting in 3", 1000, NotificationType.Error).show()
+            glob.Scheduler.AddDelayed(1000, NotificationMassive("Starting in 2", 1000, NotificationType.Warning).show)
+            glob.Scheduler.AddDelayed(2000, NotificationMassive("Starting in 1", 1000, NotificationType.Info).show)
+            glob.Scheduler.AddDelayed(3000, NotificationMassive("Good Luck, Have Fun", 1000, NotificationType.Info).show)
+        else:
+            glob.AudioManager.Unpause()
 
 
 
@@ -475,13 +483,20 @@ class Gameplay:
 
     def updateLife(self):
         """Simple shortcut to lightweight already heavy code"""
-        if not self.finished and not self.isLoading and not pygame.mixer.music.get_pos() < 30: #assuming there is no notes in the 30 first ms
+        if not self.finished and not self.isLoading and not pygame.mixer.music.get_pos() < 30 and not self.isPausing: #assuming there is no notes in the 30 first ms
             self.life -= self.hp/100
             self.life = min(self.life, 100)
             self.life = max(self.life, 0)
             self.lifeBar.VectorScale(vector2(self.life*19.2, 5))
             if self.life == 0 and not self.failed:
                 self.Fail()
+
+    @property
+    def isPausing(self):
+        try:
+            return not (self.upperSprites[0].time - pygame.mixer.music.get_pos() < 3000 or self.lowerSprites[0].time - pygame.mixer.music.get_pos() < 3000)
+        except:
+            return False
 
 
     def update(self):
@@ -514,6 +529,12 @@ class Gameplay:
 
         if pygame.mixer.music.get_pos() >= self.ClosingTime and self.ClosingTime != 0 and not self.finished and not self.isLoading: #Avoid finish if song hasn't started
             self.Finish()
+        if self.isPausing and not self.paused:
+            self.paused = True
+            glob.Background.FadeTo(0.7, 400, EaseTypes.easeInOut)
+        elif not self.isPausing and self.paused:
+            self.paused = False
+            glob.Background.FadeTo(0.1, 400, EaseTypes.easeInOut)
 
 
     def dispose(self):

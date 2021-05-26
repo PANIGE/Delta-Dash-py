@@ -125,7 +125,7 @@ class rankingPanel:
             lSprite = pSprite(glob.PixelWhite, vector2(positionX, 422.5), SkinSource.local, Positions.topCentre,
                             Positions.centre)
             lSprite.VectorScale(vector2(2,55))
-            lSprite.Fade(0.7)
+            lSprite.Fade(0.2)
             glob.foregroundSprites.add(lSprite)
 
 
