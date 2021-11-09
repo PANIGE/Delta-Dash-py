@@ -1,7 +1,7 @@
 # Delta Dash
 
 Weird python mix between osu!taiko and Muse dash, with an osu!like mapping writing
-This project is a School project, so i don't care about code perfectibility
+This project is a School project (i was 17y/o), this code won't be maintained
 
 ###Sources
 most of the sounds com from [osu!Lazer resources](https://github.com/ppy/osu-resources)
